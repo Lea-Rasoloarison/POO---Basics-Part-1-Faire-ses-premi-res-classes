@@ -1,22 +1,20 @@
 <?php
 
+echo 'Car'.'</br>';
+
 require_once 'car.php';
 
-$car = new Car('red');
+$ferrari = new Car(4, 'red', 2, 'fuel');
+var_dump($ferrari);
 
-echo $car->forward();
+echo'</br>'.'</br>';
 
-
-var_dump($car);
-
-echo'</br>';
+echo 'Bike'.'</br>';
 
 require_once 'bike.php';
 
-$bike = new Bike('blue');
-
-echo $bike->forward();
-
+$bike = new Bike (2, 'blue',1);
 var_dump($bike);
+
 
 
