@@ -2,13 +2,14 @@
 
 class Bike{
 
-    private int $nbWheels = 2;
 
     private int $currentSpeed;
 
-    private string $color;
-
-    private int $nbSeats = 1;
+    public function __construct(int $nbWheels,string $color, int $nbSeats){
+        $this-> nbWheels = $nbWheels;
+        $this-> color = $color;
+        $this-> nbSeats = $nbSeats;
+    }
 
 
     /* Nombre de roues */
