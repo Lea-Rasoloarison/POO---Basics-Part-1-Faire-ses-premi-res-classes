@@ -47,6 +47,18 @@ class Bike{
         $sentence .= "I'm stopped !";
         return $sentence;
     }
+    
+    // Définition de la couleur
+
+    public function getColor(): string
+    {
+        return $this->color;
+    }
+
+    public function setColor(string $color): void
+    {
+        $this->color = $color;
+    }
 
     /* Nombre de place */
 
