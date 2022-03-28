@@ -17,14 +17,15 @@ class Car{
 
     /* Nombre de roues */
 
-    /**
-     * @return int
-     */
-    public function getNbWheels()
+    public function getNbWheels(): int
     {
         return $this->nbWheels;
     }
 
+    public function setNbWheels(int $nbWheels): void
+    {
+        $this->nbWheels = $nbWheels;
+    }
 
     /* Vitesse de la voiture */
 
@@ -52,49 +53,52 @@ class Car{
         $sentence .= "I'm stopped !";
         return $sentence;
     }
-    
-    // Définition de la couleur
-
-    public function getColor(): string
-    {
-        return $this->color;
-    }
-
-    public function setColor(string $color): void
-    {
-        $this->color = $color;
-    }
 
     /* Nombre de places */
 
-    /**
-     * @param int $nbSeats
-     */
-    public function setNbSeats($nbSeats)
+    public function getNbSeats(): int
+    {
+        return $this->nbSeats;
+    }
+
+    public function setNbSeats(int $nbSeats): void
     {
         $this->nbSeats = $nbSeats;
     }
 
 
-    /* Type énergie */
+    // Energie utilisée
 
-    /**
-     * @return string
-     */
-    public function getEnergyType()
+    private function getEnergy(): string
     {
-        return $this->energyType;
+        return $this->energy;
     }
 
-    /* Niveau d'énergie */
-
-    /**
-     * @param int $energieLevel
-     */
-    public function setEnergieLevel($energieLevel)
+    // Relier à ALLOWED ENERGIES = permettant de choisir une des deux énergie disponible
+    private function setEnergy(string $energy): Car
     {
-        $this->energieLevel = $energieLevel;
+        if (in_array($energy, self::ALLOWED_ENERGIES)) { /* SELF est utilisé à la place de THIS car il représente la classe et non l'instance */
+            $this->energy = $energy;
+        }
+        return $this;
     }
 
 
+    // Niveau d'énergie
+
+    private function getEnergyLevel(): int
+    {
+        return $this->energyLevel;
+    }
+
+    private function setEnergyLevel(int $energyLevel): void
+    {
+        $this->energyLevel = $energyLevel;
+    }
+
+// Possibilité d'avoir uniquement ses deux ressources possibles pour les énergies utilisées
+    private const ALLOWED_ENERGIES = [
+        'fuel',
+        'electric',
+    ];
 }
