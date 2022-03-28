@@ -13,12 +13,14 @@ class Bike{
 
     /* Nombre de roues */
 
-    /**
-     * @return int
-     */
-    public function getNbWheels()
+    public function getNbWheels(): int
     {
         return $this->nbWheels;
+    }
+
+    public function setNbWheels(int $nbWheels): void
+    {
+        $this->nbWheels = $nbWheels;
     }
 
     /* Vitesse du vélo */
@@ -47,33 +49,17 @@ class Bike{
         $sentence .= "I'm stopped !";
         return $sentence;
     }
-    
-    // Définition de la couleur
-
-    public function getColor(): string
-    {
-        return $this->color;
-    }
-
-    public function setColor(string $color): void
-    {
-        $this->color = $color;
-    }
 
     /* Nombre de place */
 
-    /**
-     * @param int $nbSeats
-     */
-    public function setNbSeats($nbSeats)
+    public function getNbSeats(): int
+    {
+        return $this->nbSeats;
+    }
+
+    public function setNbSeats(int $nbSeats): void
     {
         $this->nbSeats = $nbSeats;
     }
-
-
-
-
-
-
 
 }
