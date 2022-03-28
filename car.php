@@ -2,17 +2,16 @@
 
 class Car{
 
-    private int $nbWheels = 4;
-
-    private int $currentSpeed;
-
-    private string $color;
-
-    private int $nbSeats = 5;
-
     private string $energyType = 'electric';
-
     private int $energieLevel = 80;
+
+    public function __construct(int $nbWheels,string $color, int $nbSeats, string $energy){
+        $this-> nbWheels = $nbWheels;
+        $this-> color = $color;
+        $this-> nbSeats = $nbSeats;
+        $this->energy = $energy;
+    }
+
 
 
     /* Nombre de roues */
